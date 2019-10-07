@@ -1,0 +1,7 @@
+on chat server:
+0 0 1 * * find /var/lib/matrix-synapse/media/local_content/* -type f -mtime -31 -print0 | xargs -0 cp -t /home/jweaver/Media
+0 0 2 * * rm /home/jweaver/Media/*
+
+on nextcloud server:
+5 0 1 1-12 * cd /home/jweaver/matrix_backup && ./backup.sh
+
